@@ -1,0 +1,1186 @@
+@font-face {
+    font-family: "Amatic";
+    src: url(../fonts/AmaticSC-Bold.ttf);
+}
+@font-face {
+    font-family: "Josefin";
+    src: url(../fonts/JosefinSans-Bold.ttf);
+}
+body {
+    font-family: "Josefin", sans-serif;
+    margin: 0px;
+    /* background-color: #72b9f3; */
+    background-image: url("../img/Artiste/neagle/IMG_1218.JPG");
+}
+
+#headerPic {
+    position: absolute;
+    background-image: url("../img/Artiste/neagle/IMG_1218.jpg");
+    background-position: top;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 3;
+}
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Amatic", sans-serif;
+    font-size: min(130px, 15vw);
+    color: #EDF4ED;
+    background-color: #00000048;
+    width: 92%;
+    max-width: 670px;
+    height: min(124px, 15vw);
+    margin-top: 10vh;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+}
+#headerListButtons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    background-image: linear-gradient(#ffffff00, #31411a);
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    bottom: 0px;
+}
+.headerButtons {
+    text-decoration: none;
+    color: #EDF4ED;
+    font-size: min(35px, 4vw);
+    margin-bottom: 4vh;
+}
+.headerButtons:hover {
+    color: #e7ff60;
+}
+nav {
+    display: grid;
+    grid-template-columns: 28% repeat(3, 24%);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "navLogo navProducts navShops navContact";
+    background-color: #122C34;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    height: 80px;
+    width: 100%;
+    z-index: 1;
+}
+nav div a {
+    text-decoration: none;
+    color: #EDF4ED;
+    font-size: min(25px, 3vw);
+}
+nav div a:hover {
+    color: #e7ff60;
+}
+.navButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* hamburger menu */
+#navMenu {
+    display: none;
+}
+#iconMenu {
+    color: #edf4ed;
+    font-size: 40px;
+    transform: rotate(0deg);
+    transition: .3s;
+}
+#navMenu input:checked ~ #iconMenu {
+    transform: rotate(90deg);
+}
+#navMenu input {
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+#openMenu {
+    top: 80px;
+    left: 0px;
+    height: auto;
+    margin: 0px;
+    padding: 0px 0px 40px 0px;
+    width: 100%;
+    list-style: none;
+    background-color: #193d47;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: .3s;
+}
+#navMenu input:checked ~ #openMenu {
+    transform: scaleY(1);
+}
+#openMenu li {
+    padding-top: 40px;
+}
+#openMenu li a {
+    font-size: 25px;
+}
+/* fin hamburger menu */
+
+#navLogo {
+    grid-area: navLogo;
+    justify-content: flex-start;
+    margin-left: 10%;
+    height: 80px;
+}
+#navLogoTxt {
+    font-family: "Amatic";
+    font-size: min(7vw, 80px);
+    margin-top: -10px;
+}
+#navProducts {
+    grid-area: navProducts;
+}
+#navShops {
+    grid-area: navShops;
+}
+#navContact {
+    grid-area: navContact;
+}
+#filler {
+    height: calc(100vh + 100px);
+}
+/* bandeaux */
+.bandeau {
+    margin-top: 200px;
+    height: 500px;
+    background-color: #224870;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.bandeauTxt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+    color: #ffffff;
+    text-align: justify;
+}
+.bandeau img {
+    height: min(110%, 50vw);
+    border: 1px solid #EDF4ED;
+}
+.bandeauTxt h3 {
+    font-size: 2.2em;
+}
+.bandeauTxt p {
+    font-size: 1.5em;
+    text-decoration: none;
+}
+/*Nos produits*/
+.sectionTitle {
+    text-align: center;
+    font-size: 2.5em;
+    color: #224870;
+    margin-top: 250px;
+    margin-bottom: 120px;
+}
+.sectionTitle2 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #224870;
+    margin-top: 1050px;
+    margin-bottom: 120px;
+}
+#productList {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 0px 15vw;
+}
+.productCategory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    min-width: 430px;
+    height: 30vw;
+    min-height: 430px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 40px;
+    text-decoration: none;
+    opacity: 1;
+    transition: .5s;
+}
+.productCategory:hover {
+    background-size: 120%;
+}
+.productCategory h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 45px;
+    font-size: 2em;
+    color: #EDF4ED;
+    background-color: #224870;
+    border: none;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    transition: .5s;
+}
+.productCategory:hover h4 {
+    height: 25%;
+    background-color: #224870;
+    border: 1px solid #EDF4ED;
+}
+#productImg1 {
+    background-image: url(../img/IMG_4334.jpg);
+}
+#productImg2 {
+    background-image: url(../img/Artiste/kizwall/IMG_1322.jpg);
+}
+#productImg3 {
+    background-image: url(../img/unnamed.jpg);
+}
+#productImg4 {
+    background-image: url(../img/Artiste/666/IMG_0902.JPG);
+}
+/*Nous retrouver*/
+#containerFindUs {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0px 10vw;
+    margin-bottom: 150px;
+}
+#mapFindUs {
+    width: 40vw;
+    min-width: 500px;
+    transform: scale(1);
+    transition: .5s;
+}
+#mapFindUs:hover {
+    transform: scale(1.2);
+}
+#contactFindUs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7em;
+    line-height: 120%;
+}
+#socialFindUs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #122C34;
+    margin-top: 50px;
+    padding: 65px 70px;
+}
+#socialFindUs a {
+    text-decoration: none;
+    color: #ffffff;
+}
+#socialFindUs a:hover {
+    color: #e7ff60;
+}
+#otherFindUs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #79B971;
+    padding: 30px 0px;
+}
+/* footer */
+footer {
+    width: 100%;
+    height: 120px;
+    background-color: #122C34;
+    display:flex;
+    justify-content: space-around;
+    padding-top:60px;
+    font-size:20px;
+}
+
+/* queries bandeau et retrouver*/
+@media screen and (max-width: 850px) {
+    .bandeau {
+        min-height: 400px;
+        height: fit-content;
+        margin-top: 200px;
+        padding-bottom: 15px;
+        flex-direction: column;
+    }
+    #bandeau2 {
+        margin-top: 400px;
+        flex-direction: column-reverse;
+    }
+    .bandeau img {
+        margin: 0px 5vw;
+        margin-top: -120px;
+        height: 70vw;
+    }
+    .bandeauTxt {
+        width: 90%;
+    }
+    #mapFindUs:hover { /* retrouver scale*/
+        transform: scale(1);
+    }
+}
+/* queries nav et produits et retrouver*/
+@media screen and (max-width: 600px) {
+    #headerListButtons { /* nav */
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: column;
+        height: 30vh;
+    }
+    .headerButtons {
+        font-size: 30px;
+    }
+    nav div:not(#navMenu) a:not(#navLogoTxt) {
+        display: none;
+    }
+    nav {
+        grid-template-columns: 80% 20%;
+        grid-template-areas:
+            "navLogo navBurger";
+    }
+    #navLogo {
+        margin-left: 5%;
+    }
+    #navLogoTxt {
+        font-size: min(80px, 18vw);
+    }
+    #navMenu {
+        display: flex;
+    }
+    .productCategory { /* produits */
+        width: 70vw;
+        min-width: 0px;
+        height: 70vw;
+        min-height: 0px;
+    }
+    .productList {
+        padding: 0px 10vw;
+    }
+    #containerFindUs {/* nous retrouver */
+        padding: 0px 5vw;
+    }
+    #mapFindUs {
+        width: 80vw;
+        min-width: 0px;
+        transition: none;
+    }
+}
+@media (hover: none) {
+    .productCategory {
+        background-size: 120%;
+    }
+    .productCategory h4 {
+        height: 95%;
+        background-color: #38422ad8;
+        border: 1px solid #EDF4ED;
+    }}
+
+    
+
+
+    #PicBooks {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        padding: 0px 15vw;
+    }
+    .productBook {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30vw;
+        min-width: 430px;
+        height: 30vw;
+        min-height: 430px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-bottom: 40px;
+        text-decoration: none;
+        opacity: 1;
+        transition: .5s;
+    }
+    
+    .productBook h4 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        height: 45px;
+        font-size: 2em;
+        color: #EDF4ED;
+        background-color: #224870;
+        border: none;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        transition: .5s;
+    }
+    
+/* artistes photos */
+#PicArtiste {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 0px 15vw;
+}
+.productArtiste {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    min-width: 430px;
+    height: 30vw;
+    min-height: 430px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 40px;
+    text-decoration: none;
+    opacity: 1;
+    transition: .5s;
+}
+
+.productArtiste h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 45px;
+    font-size: 2em;
+    color: #EDF4ED;
+    background-color: #224870;
+    border: none;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    transition: .5s;
+}
+.productArtiste:hover h4 {
+    height: 25%;
+    background-color: #224870;
+    border: 1px solid #EDF4ED;
+}
+    #Artiste1 {
+    background-image: url(../img/Artiste/666/IMG_0902.JPG);
+    }
+    #Artiste2 {
+        background-image: url(../img/Artiste/neagle/nig8.jpg);
+        }
+    #Artiste3 {
+    background-image: url(../img/Artiste/nuisible/n4.jpg);
+    }
+    #Artiste4 {
+        background-image: url(../img/Artiste/falhaber/f6.jpg);
+        }
+    #Artiste5 {
+    background-image: url(../img/Artiste/thom/t7.jpg);
+    }
+    #Artiste6 {
+        background-image: url(../img/Artiste/abr/a3.jpg);
+        }
+    #Artiste7 {
+        background-image: url(../img/Artiste/brutal/IMG_1157.JPG);
+        }
+    #Artiste8 {
+    background-image: url(../img/Artiste/kizwall/IMG_1307.JPG);
+    }
+    #Artiste9 {
+        background-image: url(../img/Artiste/takeshi/IMG_0807.JPG);
+        }
+    #Artiste10 {
+    background-image: url(../img/Artiste/acab/IMG_1287.JPG);
+    }
+    #Artiste11 {
+        background-image: url(../img/Artiste/prauze/IMG_1460.JPG);
+        }
+    /*social media */
+
+    #socialFindUs2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #122C34;
+        margin-top: 20px;
+        padding: 60px;
+    }
+
+    /* 666 */
+
+    #jesus1 {
+        background-image: url(../img/Artiste/666/IMG_0978.JPG);
+    }
+    #jesus2 {
+        background-image: url(../img/Artiste/666/IMG_0969.JPG);
+    }
+    #jesus3 {
+        background-image: url(../img/Artiste/666/IMG_0944.JPG);
+    }
+    #jesus4 {
+        background-image: url(../img/Artiste/666/IMG_0942.JPG);
+    }
+    #jesus5 {
+        background-image: url(../img/Artiste/666/IMG_0939.JPG);
+    }
+    #jesus6 {
+        background-image: url(../img/Artiste/666/IMG_0938.JPG);
+    }
+    #jesus7 {
+        background-image: url(../img/Artiste/666/IMG_0937.JPG);
+    }
+    #jesus8 {
+        background-image: url(../img/Artiste/666/IMG_0926.JPG);
+    }
+    #jesus9 {
+        background-image: url(../img/Artiste/666/IMG_0925.JPG);
+    }
+    #jesus10 {
+        background-image: url(../img/Artiste/666/IMG_0918.JPG);
+    }
+    #jesus11 {
+        background-image: url(../img/Artiste/666/IMG_0916.JPG);
+    }
+    #jesus12 {
+        background-image: url(../img/Artiste/666/IMG_0914.JPG);
+    }
+    #jesus13 {
+        background-image: url(../img/Artiste/666/IMG_0909.JPG);
+    }
+    #jesus14 {
+        background-image: url(../img/Artiste/666/IMG_0907.JPG);
+    }
+    #jesus15 {
+        background-image: url(../img/Artiste/666/IMG_0905.JPG);
+    }
+    #jesus16 {
+        background-image: url(../img/Artiste/666/IMG_0902.JPG);
+    }
+    #jesus17 {
+        background-image: url(../img/Artiste/666/IMG_0901.JPG);
+    }
+    #jesus18 {
+        background-image: url(../img/Artiste/666/IMG_0900.JPG);
+    }
+    #jesus19 {
+        background-image: url(../img/Artiste/666/IMG_0899.JPG);
+    }
+    #jesus20 {
+        background-image: url(../img/Artiste/666/IMG_0897.JPG);
+    }
+    #jesus21 {
+        background-image: url(../img/Artiste/666/IMG_0896.JPG);
+    }
+    #jesus22 {
+        background-image: url(../img/Artiste/666/IMG_0895.JPG);
+    }
+    #jesus23 {
+        background-image: url(../img/Artiste/666/IMG_0894.JPG);
+    }
+    #jesus24 {
+        background-image: url(../img/Artiste/666/IMG_0893.JPG);
+    }
+    #jesus25 {
+        background-image: url(../img/Artiste/666/IMG_0892.JPG);
+    }
+    #jesus26 {
+        background-image: url(../img/Artiste/666/IMG_0899.JPG);
+    }
+    #jesus27 {
+        background-image: url(../img/Artiste/666/IMG_0880.JPG);
+    }
+    #jesus28 {
+        background-image: url(../img/Artiste/666/IMG_0876.JPG);
+    }
+    #jesus29 {
+        background-image: url(../img/Artiste/666/IMG_0873.JPG);
+    }
+    #jesus30 {
+        background-image: url(../img/Artiste/666/IMG_0872.JPG);
+    }
+    #jesus31 {
+        background-image: url(../img/Artiste/666/IMG_0871.JPG);
+    }
+    #jesus32 {
+        background-image: url(../img/Artiste/666/IMG_0870.JPG);
+    }
+    #jesus33 {
+        background-image: url(../img/Artiste/666/IMG_0867.JPG);
+    }
+    #jesus34 {
+        background-image: url(../img/Artiste/666/IMG_0866.JPG);
+    }
+    #jesus35 {
+        background-image: url(../img/Artiste/666/IMG_0865.JPG);
+    }
+    #jesus36 {
+        background-image: url(../img/Artiste/666/IMG_0858.JPG);
+    }
+    #jesus37 {
+        background-image: url(../img/Artiste/666/7.JPG);
+    }
+    #jesus38 {
+        background-image: url(../img/Artiste/666/5.JPG);
+    }
+    #jesus39 {
+        background-image: url(../img/Artiste/666/4.JPG);
+    }
+    #jesus40 {
+        background-image: url(../img/Artiste/666/3.JPG);
+    }
+    #jesus41 {
+        background-image: url(../img/Artiste/666/2.JPG);
+    }
+    #jesus42 {
+        background-image: url(../img/Artiste/666/1.JPG);
+    }
+/* neagle */
+#marc1 {
+    background-image: url(../img/Artiste/neagle/IMG_1191.JPG);
+} 
+#marc2 {
+    background-image: url(../img/Artiste/neagle/IMG_1192.JPG);
+} #marc3 {
+    background-image: url(../img/Artiste/neagle/IMG_1193.JPG);
+} #marc4 {
+    background-image: url(../img/Artiste/neagle/IMG_1194.JPG);
+} #marc5 {
+    background-image: url(../img/Artiste/neagle/IMG_1195.JPG);
+} #marc6 {
+    background-image: url(../img/Artiste/neagle/IMG_1196.JPG);
+} #marc7 {
+    background-image: url(../img/Artiste/neagle/IMG_1200.JPG);
+} #marc8 {
+    background-image: url(../img/Artiste/neagle/IMG_1201.JPG);
+} #marc9 {
+    background-image: url(../img/Artiste/neagle/IMG_1202.JPG);
+} #marc10 {
+    background-image: url(../img/Artiste/neagle/IMG_1203.JPG);
+} #marc11 {
+    background-image: url(../img/Artiste/neagle/IMG_1204.JPG);
+} #marc12 {
+    background-image: url(../img/Artiste/neagle/IMG_1205.JPG);
+} #marc13 {
+    background-image: url(../img/Artiste/neagle/IMG_1207.JPG);
+} #marc14 {
+    background-image: url(../img/Artiste/neagle/IMG_1212.JPG);
+} #marc15 {
+    background-image: url(../img/Artiste/neagle/IMG_1217.JPG);
+} #marc16 {
+    background-image: url(../img/Artiste/neagle/IMG_1218.JPG);
+} #marc17 {
+    background-image: url(../img/Artiste/neagle/IMG_1222.JPG);
+} #marc18 {
+    background-image: url(../img/Artiste/neagle/IMG_1225.JPG);
+} #marc19 {
+    background-image: url(../img/Artiste/neagle/IMG_1227.JPG);
+} #marc20 {
+    background-image: url(../img/Artiste/neagle/IMG_1232.JPG);
+} #marc21 {
+    background-image: url(../img/Artiste/neagle/IMG_1241.JPG);
+} #marc22 {
+    background-image: url(../img/Artiste/neagle/IMG_1242.JPG);
+} #marc23 {
+    background-image: url(../img/Artiste/neagle/IMG_1244.JPG);
+} #marc24 {
+    background-image: url(../img/Artiste/neagle/IMG_1246.JPG);
+} #marc25 {
+    background-image: url(../img/Artiste/neagle/IMG_1249.JPG);
+} #marc26 {
+    background-image: url(../img/Artiste/neagle/IMG_1251.JPG);
+} #marc27 {
+    background-image: url(../img/Artiste/neagle/IMG_1253.JPG);
+} #marc28 {
+    background-image: url(../img/Artiste/neagle/IMG_1254.JPG);
+} #marc29 {
+    background-image: url(../img/Artiste/neagle/IMG_1255.JPG);
+} #marc30 {
+    background-image: url(../img/Artiste/neagle/IMG_1260.JPG);
+} #marc31 {
+    background-image: url(../img/Artiste/neagle/IMG_1261.JPG);
+} #marc32 {
+    background-image: url(../img/Artiste/neagle/IMG_1267.JPG);
+} #marc33 {
+    background-image: url(../img/Artiste/neagle/IMG_1268.JPG);
+} #marc34 {
+    background-image: url(../img/Artiste/neagle/IMG_1269.JPG);
+}
+#marc35 {
+    background-image: url(../img/Artiste/neagle/IMG_1272.JPG);
+} #marc36 {
+    background-image: url(../img/Artiste/neagle/IMG_1273.JPG);
+} #marc37 {
+    background-image: url(../img/Artiste/neagle/nig1.jpg);
+} #marc38 {
+    background-image: url(../img/Artiste/neagle/nig2.jpg);
+} #marc39 {
+    background-image: url(../img/Artiste/neagle/nig8.jpg);
+} 
+/* nuisible*/
+#leo1 {
+    background-image: url(../img/Artiste/nuisible/n1.jpg);
+} 
+#leo2 {
+    background-image: url(../img/Artiste/nuisible/n2.jpg);
+} #leo3 {
+    background-image: url(../img/Artiste/nuisible/n3.jpg);
+}  #leo4 {
+    background-image: url(../img/Artiste/nuisible/n4.jpg);
+}
+#leo5 {
+    background-image: url(../img/Artiste/nuisible/n5.jpg);
+}
+#leo6 {
+    background-image: url(../img/Artiste/nuisible/n7.jpg);
+}
+/* fal*/
+#messi1 {
+    background-image: url(../img/Artiste/falhaber/f1.jpg);
+}
+#messi2 {
+    background-image: url(../img/Artiste/falhaber/f2.jpg);
+}#messi3 {
+    background-image: url(../img/Artiste/falhaber/f3.jpg);
+}#messi4 {
+    background-image: url(../img/Artiste/falhaber/f4.jpg);
+}#messi5 {
+    background-image: url(../img/Artiste/falhaber/f5.jpg);
+}#messi6 {
+    background-image: url(../img/Artiste/falhaber/f6.jpg);
+}#messi7 {
+    background-image: url(../img/Artiste/falhaber/f7.jpg);
+}
+/*thom*/
+#tom1 {
+    background-image: url(../img/Artiste/thom/t2.jpg);
+}
+#tom2 {
+    background-image: url(../img/Artiste/thom/t3.jpg);
+}#tom3 {
+    background-image: url(../img/Artiste/thom/t6.jpg);
+}#tom4 {
+    background-image: url(../img/Artiste/thom/t7.jpg);
+}
+
+/*abr*/
+#ab1 {
+    background-image: url(../img/Artiste/abr/a2.jpg);
+}
+#ab2 {
+    background-image: url(../img/Artiste/abr/a3.jpg);
+}
+#ab3 {
+    background-image: url(../img/Artiste/abr/a4.jpg);
+}
+/*brutal*/
+#br1 {
+    background-image: url(../img/Artiste/brutal/IMG_1119.JPG);
+}
+#br2 {
+    background-image: url(../img/Artiste/brutal/IMG_1120.JPG);
+}
+#br3 {
+    background-image: url(../img/Artiste/brutal/IMG_1121.JPG);
+}
+#br4 {
+    background-image: url(../img/Artiste/brutal/IMG_1122.JPG);
+}
+#br5 {
+    background-image: url(../img/Artiste/brutal/IMG_1123.JPG);
+}
+#br6 {
+    background-image: url(../img/Artiste/brutal/IMG_1127.JPG);
+}
+#br7 {
+    background-image: url(../img/Artiste/brutal/IMG_1128.JPG);
+}
+#br8 {
+    background-image: url(../img/Artiste/brutal/IMG_1129.JPG);
+}
+#br9 {
+    background-image: url(../img/Artiste/brutal/IMG_1142.JPG);
+}
+#br10 {
+    background-image: url(../img/Artiste/brutal/IMG_1143.JPG);
+}
+#br11 {
+    background-image: url(../img/Artiste/brutal/IMG_1146.JPG);
+}
+#br12 {
+    background-image: url(../img/Artiste/brutal/IMG_1148.JPG);
+}
+#br13 {
+    background-image: url(../img/Artiste/brutal/IMG_1150.JPG);
+}
+#br14 {
+    background-image: url(../img/Artiste/brutal/IMG_1153.JPG);
+}
+#br15 {
+    background-image: url(../img/Artiste/brutal/IMG_1154.JPG);
+}
+#br16 {
+    background-image: url(../img/Artiste/brutal/IMG_1156.JPG);
+}
+
+#br17 {
+    background-image: url(../img/Artiste/brutal/IMG_1157.JPG);
+}
+#br18 {
+    background-image: url(../img/Artiste/brutal/IMG_1158.JPG);
+}
+
+/*kizwall*/
+#kis1 {
+    background-image: url(../img/Artiste/kizwall/IMG_1298.JPG);
+}
+#kis2 {
+    background-image: url(../img/Artiste/kizwall/IMG_1299.JPG);
+}
+#kis3 {
+    background-image: url(../img/Artiste/kizwall/IMG_1300.JPG);
+}
+#kis4 {
+    background-image: url(../img/Artiste/kizwall/IMG_1301.JPG);
+}
+#kis5 {
+    background-image: url(../img/Artiste/kizwall/IMG_1304.JPG);
+}
+#kis6 {
+    background-image: url(../img/Artiste/kizwall/IMG_1306.JPG);
+}
+#kis7 {
+    background-image: url(../img/Artiste/kizwall/IMG_1307.JPG);
+}
+#kis8 {
+    background-image: url(../img/Artiste/kizwall/IMG_1322.JPG);
+}
+#kis9 {
+    background-image: url(../img/Artiste/kizwall/IMG_1325.JPG);
+}
+#kis10 {
+    background-image: url(../img/Artiste/kizwall/IMG_1326.JPG);
+}
+#kis11 {
+    background-image: url(../img/Artiste/kizwall/IMG_1328.JPG);
+}
+#kis12 {
+    background-image: url(../img/Artiste/kizwall/IMG_1322.JPG);
+}
+#kis13 {
+    background-image: url(../img/Artiste/kizwall/IMG_1333.JPG);
+}
+#kis14 {
+    background-image: url(../img/Artiste/kizwall/IMG_1339.JPG);
+}
+#kis15 {
+    background-image: url(../img/Artiste/kizwall/IMG_1341.JPG);
+}
+#kis16 {
+    background-image: url(../img/Artiste/kizwall/IMG_1343.JPG);
+}
+#kis17 {
+    background-image: url(../img/Artiste/kizwall/IMG_1348.JPG);
+}
+#kis18 {
+    background-image: url(../img/Artiste/kizwall/IMG_1365.JPG);
+}
+#kis19 {
+    background-image: url(../img/Artiste/kizwall/IMG_1371.JPG);
+}
+#kis20 {
+    background-image: url(../img/Artiste/kizwall/IMG_1373.JPG);
+}
+#kis21 {
+    background-image: url(../img/Artiste/kizwall/IMG_1378.JPG);
+}
+#kis22 {
+    background-image: url(../img/Artiste/kizwall/IMG_1385.JPG);
+}
+#kis23 {
+    background-image: url(../img/Artiste/kizwall/IMG_.JPG);
+}
+#kis24 {
+    background-image: url(../img/Artiste/kizwall/IMG_.JPG);
+}
+/*tak*/
+
+#tak1 {
+    background-image: url(../img/Artiste/takeshi/IMG_0806.JPG);
+}
+#tak2 {
+    background-image: url(../img/Artiste/takeshi/IMG_0807.JPG);
+}
+#tak3 {
+    background-image: url(../img/Artiste/takeshi/IMG_0808.JPG);
+}
+#tak4 {
+    background-image: url(../img/Artiste/takeshi/IMG_0809.JPG);
+}
+#tak5 {
+    background-image: url(../img/Artiste/takeshi/IMG_0825.JPG);
+}
+#tak6 {
+    background-image: url(../img/Artiste/takeshi/IMG_0827.JPG);
+}
+#tak7 {
+    background-image: url(../img/Artiste/takeshi/IMG_1000.JPG);
+}
+#tak8 {
+    background-image: url(../img/Artiste/takeshi/IMG_1001.JPG);
+}
+#tak9 {
+    background-image: url(../img/Artiste/takeshi/IMG_1011.JPG);
+}
+#tak10 {
+    background-image: url(../img/Artiste/takeshi/IMG_1013.JPG);
+}
+#tak11 {
+    background-image: url(../img/Artiste/takeshi/IMG_1017.JPG);
+}
+#tak12 {
+    background-image: url(../img/Artiste/takeshi/IMG_1018.JPG);
+}
+#tak13 {
+    background-image: url(../img/Artiste/takeshi/IMG_1019.JPG);
+}
+#tak14 {
+    background-image: url(../img/Artiste/takeshi/IMG_1020.JPG);
+}
+#tak15{
+    background-image: url(../img/Artiste/takeshi/IMG_1024.JPG);
+}
+#tak16 {
+    background-image: url(../img/Artiste/takeshi/IMG_1052.JPG);
+}
+#tak17 {
+    background-image: url(../img/Artiste/takeshi/IMG_1056.JPG);
+}
+#tak18 {
+    background-image: url(../img/Artiste/takeshi/IMG_1077.JPG);
+}
+#tak19 {
+    background-image: url(../img/Artiste/takeshi/IMG_1086.JPG);
+}
+
+#tak20 {
+    background-image: url(../img/Artiste/takeshi/IMG_1095.JPG);
+}
+#tak21 {
+    background-image: url(../img/Artiste/takeshi/IMG_1098.JPG);
+}
+#tak22 {
+    background-image: url(../img/Artiste/takeshi/IMG_1100.JPG);
+}
+#tak23 {
+    background-image: url(../img/Artiste/takeshi/IMG_1101.JPG);
+}
+/*acab*/
+#ac1 {
+    background-image: url(../img/Artiste/acab/IMG_1277.JPG);
+}
+#ac2 {
+    background-image: url(../img/Artiste/acab/IMG_1278.JPG);
+}
+#ac3 {
+    background-image: url(../img/Artiste/acab/IMG_1281.JPG);
+}
+#ac4 {
+    background-image: url(../img/Artiste/acab/IMG_1283.JPG);
+}
+#ac5 {
+    background-image: url(../img/Artiste/acab/IMG_1285.JPG);
+}
+#ac6 {
+    background-image: url(../img/Artiste/acab/IMG_1287.JPG);
+}
+#ac7 {
+    background-image: url(../img/Artiste/acab/IMG_1288.JPG);
+}
+#ac8 {
+    background-image: url(../img/Artiste/acab/IMG_1291.JPG);
+}
+
+/*prauze*/
+#pr1 {
+    background-image: url(../img/Artiste/prauze/IMG_1418.JPG);
+}
+#pr2 {
+    background-image: url(../img/Artiste/prauze/IMG_1419.JPG);
+}
+#pr3 {
+    background-image: url(../img/Artiste/prauze/IMG_1421.JPG);
+}
+#pr4 {
+    background-image: url(../img/Artiste/prauze/IMG_1422.JPG);
+}
+#pr5 {
+    background-image: url(../img/Artiste/prauze/IMG_1423.JPG);
+}#pr6 {
+    background-image: url(../img/Artiste/prauze/IMG_1425.JPG);
+}
+#pr7 {
+    background-image: url(../img/Artiste/prauze/IMG_1426.JPG);
+}
+#pr8 {
+    background-image: url(../img/Artiste/prauze/IMG_1428.JPG);
+}
+#pr9 {
+    background-image: url(../img/Artiste/prauze/IMG_1429.JPG);
+}
+#pr10 {
+    background-image: url(../img/Artiste/prauze/IMG_1434.JPG);
+}
+#pr11 {
+    background-image: url(../img/Artiste/prauze/IMG_1438.JPG);
+}
+#pr12 {
+    background-image: url(../img/Artiste/prauze/IMG_1443.JPG);
+}
+#pr13 {
+    background-image: url(../img/Artiste/prauze/IMG_1447.JPG);
+}
+#pr14 {
+    background-image: url(../img/Artiste/prauze/IMG_1448.JPG);
+}
+#pr15 {
+    background-image: url(../img/Artiste/prauze/IMG_1451.JPG);
+}
+#pr16 {
+    background-image: url(../img/Artiste/prauze/IMG_1452.JPG);
+}
+#pr17 {
+    background-image: url(../img/Artiste/prauze/IMG_1454.JPG);
+}
+#pr18 {
+    background-image: url(../img/Artiste/prauze/IMG_1455.JPG);
+}
+#pr19 {
+    background-image: url(../img/Artiste/prauze/IMG_1460.JPG);
+}
+#pr20 {
+    background-image: url(../img/Artiste/prauze/IMG_1461.JPG);
+}
+#pr21 {
+    background-image: url(../img/Artiste/prauze/IMG_1470.JPG);
+}
+#pr22 {
+    background-image: url(../img/Artiste/prauze/IMG_1471.JPG);
+}
+#pr23 {
+    background-image: url(../img/Artiste/prauze/IMG_1472.JPG);
+}
+#pr24 {
+    background-image: url(../img/Artiste/prauze/IMG_1475.JPG);
+}
+#pr25 {
+    background-image: url(../img/Artiste/prauze/IMG_1478.JPG);
+}
+#pr26 {
+    background-image: url(../img/Artiste/prauze/IMG_1479.JPG);
+}
+#pr27 {
+    background-image: url(../img/Artiste/prauze/IMG_1480.JPG);
+}
+
+/*formulaire*/
+form {
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+  }
+  form h1 {
+    font-size: 20px;
+  }
+  form .separation {
+    width: 100%;
+    height: 1px;
+    background-color: #747cdf;
+  }
+  form .corps-formulaire {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  form .corps-formulaire .groupe {
+    position: relative; /* Pour mettre positionner l’élément dans le flux normal de la page */
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  form .corps-formulaire .gauche .groupe input {
+    margin-top: 5px;
+    padding: 10px 5px 10px 30px;
+    border: 1px solid #c9c9c9;
+    outline-color: #747cdf;
+    border-radius: 5px;
+  }
+form .corps-formulaire .gauche .groupe i {
+    position: absolute; /* positionné par rapport à son parent le plus proche positionné */
+    left: 0;
+    top: 25px;
+    padding: 9px 8px;
+    color: #747cdf;
+  }
+  form .corps-formulaire .droite {
+    margin-left: 40px;
+  }
+  form .corps-formulaire .droite .groupe {
+    height: 100%;
+  }
+  form .corps-formulaire .droite .groupe textarea {
+    margin-top: 5px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: 2px solid #747cdf;
+    outline: none;
+    border-radius: 5px;
+    resize: none;
+    height: 72%;
+  }
+  form .pied-formulaire button {
+    margin-top: 10px;
+    background-color: #747cdf;
+    color: white;
+    font-size: 15px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: transform 0.5s;
+  }
+  form .pied-formulaire button:hover {
+    transform: scale(1.05);
+  }
+  
+  @media screen and (max-width: 920px) {
+    form .corps-formulaire .droite {
+      margin-left: 0px;
+    }
+  }
+  
